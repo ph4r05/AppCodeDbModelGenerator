@@ -26,7 +26,10 @@ public class DbModelBuilder {
             for (OCDeclarator decl : field.getDeclaration().getDeclarators()) {
                 String upname = CaseFormat.UPPER_CAMEL.to(CaseFormat.UPPER_UNDERSCORE, decl.getName());
                 String fieldName = this.prefix + "_FIELD_" + upname;
-                if (idFieldName.equals(fieldName))
+                if (idFieldName.equals(fieldName)){
+                    continue;
+                }
+
                 nmEntries += 1;
             }
         }

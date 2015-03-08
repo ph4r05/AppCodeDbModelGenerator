@@ -1,0 +1,63 @@
+<idea-plugin version="2">
+  <id>net.phonex.utils.intellij.ios.dbmodel</id>
+  <name>PhoneX DB model generator</name>
+  <version>0.1</version>
+  <vendor email="support@phone-x.net" url="https://www.phone-x.net">phone-x.net</vendor>
+
+  <description><![CDATA[
+      Generates PhoneX DB model from properties. <br/>
+      ]]>
+  </description>
+
+  <change-notes><![CDATA[
+       version 0.1
+      ]]>
+  </change-notes>
+
+  <!-- please see http://confluence.jetbrains.net/display/IDEADEV/Build+Number+Ranges for description -->
+  <idea-version since-build="123.72"/>
+  <depends>com.intellij.modules.lang</depends>
+
+  <!-- please see http://confluence.jetbrains.net/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <application-components>
+    <!-- Add your application components here -->
+  </application-components>
+
+  <project-components>
+    <!-- Add your project components here -->
+  </project-components>
+
+    <actions>
+        <action id="generateCreateTable" class="net.phonex.utils.intellij.ios.dbmodel.generators.GenerateCreateTableAction"
+                text="-getCreateTable()">
+            <add-to-group group-id="GenerateGroup" anchor="last"/>
+        </action>
+
+        <action id="generateCreateFromCursor" class="net.phonex.utils.intellij.ios.dbmodel.generators.GenerateCreateFromCursorAction"
+                text="-createFromCursor()"
+                description="Generates PhoneX DB Model methods">
+            <add-to-group group-id="GenerateGroup" anchor="last"/>
+        </action>
+
+        <action id="generateGetContentValues" class="net.phonex.utils.intellij.ios.dbmodel.generators.GenerateGetContentValuesAction"
+                text="-getContentValues()"
+                description="Generates PhoneX DB Model methods">
+            <add-to-group group-id="GenerateGroup" anchor="last"/>
+        </action>
+
+        <action id="generateFieldDecl" class="net.phonex.utils.intellij.ios.dbmodel.generators.GenerateFieldsAction"
+                text="DB fields"
+                description="Generates PhoneX DB fields declarations">
+            <add-to-group group-id="GenerateGroup" anchor="last"/>
+        </action>
+    </actions>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+</idea-plugin>

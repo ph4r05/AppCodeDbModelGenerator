@@ -39,10 +39,8 @@ public class GenerateCreateTableAction  extends AnAction {
                 final CodeStyleManager codeStyleManager = CodeStyleManager.getInstance(ocClassDecl.getProject());
 
                 dbModelBuilder.setPrefix(prefix);
-                final String createTableMethodAsString = dbModelBuilder.generateCreateTable(ocClassDecl, fields);
-                OCMethod createTableMethod = OCElementFactory.methodFromText(createTableMethodAsString, ocClassDecl, true);
-                PsiElement createTableElement = ocClassDecl.addBefore(createTableMethod, ocClassDecl.getLastChild());
-                codeStyleManager.reformat(createTableElement);
+                dbModelBuilder.setContext(psiFile, ocClassDecl, fields);
+                dbModelBuilder.generateCreateTable();
             }
 
         }.execute();

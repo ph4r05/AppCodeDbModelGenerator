@@ -59,7 +59,7 @@ public class GenerateDialog extends DialogWrapper {
         JPanel panel = decorator.createPanel();
         LabeledComponent<JPanel> jPanelLabeledComponent = LabeledComponent.create(panel, labelText);
 
-        myPrefix = new JBTextField("PEX_DBFT");
+        myPrefix = new JBTextField("PEX_DBXX");
         LabeledComponent<JTextField> jTextPrefix = LabeledComponent.create(myPrefix, "Prefix");
 
         JBPanel jbPanel = new JBPanel(new BorderLayout());

@@ -39,10 +39,8 @@ public class GenerateCreateFromCursorAction extends AnAction {
                 final CodeStyleManager codeStyleManager = CodeStyleManager.getInstance(ocClassDecl.getProject());
 
                 dbModelBuilder.setPrefix(prefix);
-                final String createFromCursorMethodAsString = dbModelBuilder.generateCreateFromCursorMethod(ocClassDecl, fields);
-                OCMethod createFromCursorMethod = OCElementFactory.methodFromText(createFromCursorMethodAsString, ocClassDecl, true);
-                PsiElement createFromCursorElement = ocClassDecl.addBefore(createFromCursorMethod, ocClassDecl.getLastChild());
-                codeStyleManager.reformat(createFromCursorElement);
+                dbModelBuilder.setContext(psiFile, ocClassDecl, fields);
+                dbModelBuilder.generateCreateFromCursor();
             }
 
         }.execute();

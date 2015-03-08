@@ -39,10 +39,8 @@ public class GenerateGetContentValuesAction extends AnAction {
                 final CodeStyleManager codeStyleManager = CodeStyleManager.getInstance(ocClassDecl.getProject());
 
                 dbModelBuilder.setPrefix(prefix);
-                final String contentValuesString = dbModelBuilder.generateGetDbContentValuesMethod(ocClassDecl, fields);
-                OCMethod contentValuesMethod = OCElementFactory.methodFromText(contentValuesString, ocClassDecl, true);
-                PsiElement contentValuesElement = ocClassDecl.addBefore(contentValuesMethod, ocClassDecl.getLastChild());
-                codeStyleManager.reformat(contentValuesElement);
+                dbModelBuilder.setContext(psiFile, ocClassDecl, fields);
+                dbModelBuilder.generateGetContentValues();
             }
 
         }.execute();

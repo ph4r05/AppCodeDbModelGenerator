@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * Created by dusanklinec on 04.03.15.
  */
-public class GenerateFieldsDeclAction extends AnAction {
+public class GenerateFieldsAction extends AnAction {
     private static final String TITLE = "Select Fields";
     private static final String LABEL_TEXT = "Fields to include in DB fields:";
 
@@ -42,11 +42,8 @@ public class GenerateFieldsDeclAction extends AnAction {
                 final CodeStyleManager codeStyleManager = CodeStyleManager.getInstance(ocClassDecl.getProject());
 
                 dbModelBuilder.setPrefix(prefix);
-                final List<OCDeclaration> fieldDecls = dbModelBuilder.generateFieldDeclaration(psiFile, ocClassDecl, fields);
-                for (OCDeclaration fieldDecl : fieldDecls) {
-                    PsiElement fieldElem = psiFile.addBefore(fieldDecl, ocClassDecl);
-                    codeStyleManager.reformat(fieldElem);
-                }
+                dbModelBuilder.setContext(psiFile, ocClassDecl, fields);
+                dbModelBuilder.generateDbFields();
             }
 
         }.execute();

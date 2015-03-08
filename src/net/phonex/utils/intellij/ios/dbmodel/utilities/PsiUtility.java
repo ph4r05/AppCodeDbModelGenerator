@@ -41,6 +41,10 @@ public class PsiUtility {
     }
 
     public static OCInterface getInterfaceFor(OCClassDeclaration cls){
+        if (cls instanceof OCInterface){
+            return (OCInterface) cls;
+        }
+
         OCFile contFile = cls.getContainingOCFile();
         if (contFile == null){
             return null;
@@ -69,6 +73,10 @@ public class PsiUtility {
     }
 
     public static OCImplementation getImplementationFor(OCClassDeclaration cls){
+        if (cls instanceof OCImplementation){
+            return (OCImplementation) cls;
+        }
+
         OCFile contFile = cls.getContainingOCFile();
         if (contFile == null){
             return null;
@@ -81,7 +89,5 @@ public class PsiUtility {
 
         return findImplementationInElement(assocFile, cls.getCanonicalName());
     }
-
-
 
 }

@@ -11,7 +11,9 @@ import com.intellij.ui.ToolbarDecorator;
 import com.intellij.ui.components.JBList;
 import com.intellij.ui.components.JBPanel;
 import com.intellij.ui.components.JBTextField;
-import com.jetbrains.objc.psi.*;
+import com.jetbrains.cidr.lang.psi.*;
+import com.jetbrains.cidr.lang.types.OCType;
+import com.jetbrains.cidr.lang.util.OCElementFactory;
 import net.phonex.utils.intellij.ios.dbmodel.utilities.PsiUtility;
 import org.jetbrains.annotations.Nullable;
 

@@ -5,9 +5,10 @@ import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.codeStyle.CodeStyleManager;
-import com.jetbrains.objc.psi.*;
-import com.jetbrains.objc.types.OCType;
-import com.jetbrains.objc.util.OCElementFactory;
+import com.jetbrains.cidr.*;
+import com.jetbrains.cidr.lang.psi.*;
+import com.jetbrains.cidr.lang.types.OCType;
+import com.jetbrains.cidr.lang.util.OCElementFactory;
 import net.phonex.utils.intellij.ios.dbmodel.utilities.PsiUtility;
 
 import java.util.ArrayList;

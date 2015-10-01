@@ -1,7 +1,8 @@
 package net.phonex.utils.intellij.ios.dbmodel.builders;
 
-import com.jetbrains.objc.psi.OCDeclaration;
-import com.jetbrains.objc.psi.OCDeclarator;
+
+import com.jetbrains.cidr.lang.psi.OCDeclaration;
+import com.jetbrains.cidr.lang.psi.OCDeclarator;
 
 /**
  * Holder class for globally defined field.

@@ -8,9 +8,11 @@ import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.util.PsiTreeUtil;
-import com.jetbrains.objc.psi.*;
-import com.jetbrains.objc.resolve.OCResolveUtil;
-import com.jetbrains.objc.search.OCSearchUtil;
+import com.jetbrains.cidr.lang.psi.OCClassDeclaration;
+import com.jetbrains.cidr.lang.psi.OCFile;
+import com.jetbrains.cidr.lang.psi.OCImplementation;
+import com.jetbrains.cidr.lang.psi.OCInterface;
+
 
 public class PsiUtility {
 

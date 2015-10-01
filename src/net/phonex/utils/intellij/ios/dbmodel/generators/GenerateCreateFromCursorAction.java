@@ -6,8 +6,9 @@ import com.intellij.openapi.actionSystem.LangDataKeys;
 import com.intellij.openapi.command.WriteCommandAction;
 import com.intellij.psi.*;
 import com.intellij.psi.codeStyle.CodeStyleManager;
-import com.jetbrains.objc.psi.*;
-import com.jetbrains.objc.util.OCElementFactory;
+import com.jetbrains.cidr.lang.psi.*;
+import com.jetbrains.cidr.lang.types.OCType;
+import com.jetbrains.cidr.lang.util.OCElementFactory;
 import net.phonex.utils.intellij.ios.dbmodel.utilities.PsiUtility;
 import net.phonex.utils.intellij.ios.dbmodel.builders.DbModelBuilder;
 
